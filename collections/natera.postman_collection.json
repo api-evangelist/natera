@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Natera EMR Ordering and Results Integration",
+    "description": "Representational collection for Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API; ordering and results are exchanged per health system over Epic Aura and point-to-point HL7. The requests below model that bidirectional workflow for cataloging only and are not official, live Natera endpoints. See https://www.natera.com/emr/.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.natera.com",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Submit Order (representational)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/emr/orders",
+              "host": ["{{baseUrl}}"],
+              "path": ["emr", "orders"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"patient-123\",\n  \"test\": \"Panorama\",\n  \"orderingProvider\": \"provider-456\",\n  \"documents\": [\"progress-note\", \"pathology-report\"]\n}"
+            },
+            "description": "Models the Epic Aura order leg: transmits an order plus related documentation to Natera. Not a published endpoint."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Results",
+      "item": [
+        {
+          "name": "Get Results (representational)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/emr/results/:orderId",
+              "host": ["{{baseUrl}}"],
+              "path": ["emr", "results", ":orderId"],
+              "variable": [
+                {
+                  "key": "orderId",
+                  "value": "order-123"
+                }
+              ]
+            },
+            "description": "Models the Epic Aura results leg: retrieves results for an order to flow back into the patient EHR. Not a published endpoint."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

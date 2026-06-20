@@ -1,0 +1,52 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Natera
+providerId: natera
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- Genetic Testing
+- Healthcare
+- Diagnostics
+- EHR Integration
+- HL7
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Natera does not publish public API rate limits. Its integration surface is
+  clinical EMR/EHR connectivity (Epic Aura, OncoEMR, point-to-point HL7) and
+  the Constellation partner-lab platform - none of which expose a documented
+  public RPM/TPM-style quota. Any throughput or message-volume constraints are
+  defined privately within each integration or partnership agreement and are
+  not reconciled in this artifact.
+notes: >-
+  reconciled false: no public Natera rate-limit documentation exists. HL7 / Aura
+  message throughput and Constellation job concurrency are governed by private
+  integration agreements. Revisit if Natera publishes developer rate limits.
+sources:
+- https://www.natera.com/emr/
+- https://constellation.natera.com
+responseCodes:
+  throttled: 429
+limits:
+- name: EHR Message Throughput
+  scope: integration
+  metric: messages
+  limit: see integration agreement
+  notes: Order/results HL7 / Aura message volume is governed per health-system integration, not publicly documented.
+- name: Constellation Job Concurrency
+  scope: partner
+  metric: jobs
+  limit: see partnership agreement
+  notes: Genetic analysis job concurrency on Constellation is set by the partner-lab agreement, not publicly documented.
+policies:
+- name: Agreement-Defined Limits
+  description: Throughput and concurrency are negotiated per integration or partnership, not via published self-serve quotas.
+- name: Backoff Strategy
+  description: Where applicable, clients should implement exponential backoff with jitter and honor Retry-After.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

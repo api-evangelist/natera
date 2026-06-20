@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0",
+  "info": {
+    "title": "Natera EMR Ordering and Results Integration",
+    "description": "Representational Open Collection for Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API; ordering and results are exchanged per health system over Epic Aura and point-to-point HL7. The operations below model that bidirectional workflow for cataloging only and are not official, live Natera endpoints. See https://www.natera.com/emr/.",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://www.natera.com",
+      "description": "Placeholder host. Natera does not document a public REST base URL."
+    }
+  ],
+  "operations": [
+    {
+      "id": "submitOrder",
+      "name": "Submit Order (representational)",
+      "method": "POST",
+      "path": "/emr/orders",
+      "description": "Models the Epic Aura order leg: transmits an order plus related documentation (progress notes, pathology reports, pedigree charts, cancer history) to Natera. Not a published endpoint.",
+      "request": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "type": "application/json",
+          "example": {
+            "patientId": "patient-123",
+            "test": "Panorama",
+            "orderingProvider": "provider-456",
+            "documents": ["progress-note", "pathology-report"]
+          }
+        }
+      }
+    },
+    {
+      "id": "getResults",
+      "name": "Get Results (representational)",
+      "method": "GET",
+      "path": "/emr/results/{orderId}",
+      "description": "Models the Epic Aura results leg: retrieves results for an order to flow back into the patient EHR. Not a published endpoint.",
+      "parameters": [
+        {
+          "name": "orderId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "example": "order-123"
+        }
+      ]
+    }
+  ]
+}

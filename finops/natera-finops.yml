@@ -1,0 +1,90 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Natera
+providerId: natera
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- Genetic Testing
+- Healthcare
+- Diagnostics
+- EHR Integration
+- HL7
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Natera. Natera does not bill usage-based API consumption.
+  Costs are clinical (genetic tests billed to patients/payers per test, often
+  through insurance with patient-assistance programs) and commercial (EHR
+  integration and Constellation partner-lab agreements). There is no public,
+  metered API spend model to map to FOCUS, so this artifact is unreconciled
+  and provided for cataloging consistency only.
+notes: >-
+  reconciled false: no usage-based API billing or public rate card exists.
+  Spend is test-level (insurance/self-pay) and contract-level (integration /
+  partnership). Revisit if Natera publishes a developer or partner billing
+  model.
+sources:
+- https://www.natera.com/emr/
+- https://www.natera.com/natera-portal-hub/
+- https://constellation.natera.com
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Natera
+serviceCategory: Healthcare and Life Sciences
+billingModel:
+  pricingCategory: Contract / Clinical
+  billingFrequency: Per Test / Per Agreement
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+focusColumns:
+  ServiceName: Natera Genetic Testing and EHR Integration
+  ServiceCategory: Healthcare and Life Sciences
+  ProviderName: Natera
+  PublisherName: Natera
+  InvoiceIssuerName: Natera
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Contract / Clinical
+meters:
+- name: tests_billed
+  description: Genetic tests ordered and billed to patient/payer (not an API meter).
+  unit: tests
+  aggregation: sum
+  dimensions:
+  - account
+  - test
+- name: ehr_integration
+  description: EHR integration agreement (Epic Aura / HL7 / OncoEMR), billed by contract.
+  unit: contracts
+  aggregation: count
+  dimensions:
+  - health_system
+- name: constellation_jobs
+  description: Genetic analysis jobs run by partner labs on Constellation, governed by partnership terms.
+  unit: jobs
+  aggregation: sum
+  dimensions:
+  - partner
+principles:
+- name: Visibility
+  description: Track genetic test order volume and EHR/partner integration agreements; no public API usage export exists.
+- name: Allocation
+  description: Map test billing to patients/payers and integration costs to the contracting health system or partner lab.
+- name: Optimization
+  description: Use EHR integration (Aura/OncoEMR) to reduce manual ordering overhead; leverage Natera patient-assistance programs where applicable.
+- name: Accountability
+  description: Assign owners for clinical billing reconciliation and for each integration/partnership agreement.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,76 @@
+aid: natera
+name: Natera
+review:
+  question: Does Natera expose a documented public WebSocket or realtime streaming API?
+  answer: false
+  date: '2026-06-20'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Natera publishes no developer API at all -
+    no REST, no Server-Sent Events, and no WebSocket. Its surface is clinical
+    EMR/EHR integration (Epic Aura, OncoEMR/Flatiron, point-to-point HL7) and
+    the Constellation partner-lab bioinformatics platform, none of which
+    document a public realtime/streaming transport. There is no in-scope
+    streaming surface to model.
+findings:
+  summary: |
+    Natera does not publish a public developer API or a documented WebSocket /
+    realtime streaming API. Natera is a clinical genetic testing company whose
+    technical surface is integration- and portal-based: bidirectional test
+    order and results exchange over the Epic Aura hub and point-to-point HL7
+    (with pre-built orders in the Epic Foundation System), oncology ordering
+    inside Flatiron's OncoEMR, the Constellation cloud platform for partner
+    labs to run cfDNA genetic-analysis jobs, plus clinician and patient web
+    portals and a provider mobile app. None of these are documented as a
+    public REST, SSE, or WebSocket API. No base URL, OpenAPI/Swagger, or
+    developer reference is published. Integrations are provisioned per health
+    system or partner via commercial agreement and a Natera EHR specialist.
+  transports:
+    - protocol: HL7
+      scheme: tcp/mllp
+      note: Order/results exchange via Epic Aura hub and point-to-point HL7; provisioned per health system, not publicly documented.
+      documented: false
+    - protocol: REST
+      scheme: https
+      note: No public REST developer API is documented for ordering, results, or the provider app backend.
+      documented: false
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events streaming surface is documented.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented on any Natera product, EMR, portal, or Constellation page as of the review date.
+  endpointsConfirmedRest: []
+  portalsConfirmed:
+    - https://connect.natera.com/users/log_in
+    - https://oncology.natera.com/
+    - https://transplant.natera.com/
+    - http://raredisease.natera.com/
+    - https://clinicalsites.natera.com/
+    - http://constellation.natera.com
+    - https://my.natera.com/
+sources:
+  - url: https://www.natera.com/emr/
+    type: Documentation
+    note: Describes Epic Aura bidirectional order/results and point-to-point HL7; no public REST/WebSocket API.
+  - url: https://www.natera.com/natera-portal-hub/
+    type: Documentation
+    note: Lists clinician/patient/partner portals; portal-based workflows only, no API.
+  - url: https://constellation.natera.com
+    type: Documentation
+    note: Constellation partner-lab bioinformatics platform; B2B agreement, no public developer API.
+  - url: https://apps.apple.com/us/app/natera-provider/id1559183134
+    type: Documentation
+    note: Provider mobile app; backed by private internal services, no documented public API.
+actions:
+  asyncapiPath: ''
+  apisYmlUpdated: true
+  reason: |
+    No public API or streaming protocol surface exists. Natera's connectivity
+    is clinical EMR/EHR integration (HL7/Epic Aura/OncoEMR), the Constellation
+    partner platform, and portals - all provisioned via agreement, none
+    publicly documented as REST/SSE/WebSocket. No AsyncAPI was authored
+    because there is no documented streaming transport to model.

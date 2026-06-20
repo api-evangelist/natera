@@ -1,0 +1,80 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Natera
+providerId: natera
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- Genetic Testing
+- Healthcare
+- Diagnostics
+- EHR Integration
+- HL7
+- Plans
+description: >-
+  Natera does not publish API plans or pay-as-you-go developer pricing. Its
+  surface is clinical EMR/EHR integration (Epic Aura, OncoEMR, point-to-point
+  HL7) and the Constellation partner-lab bioinformatics platform - all
+  provisioned through commercial/clinical agreements, not self-serve API tiers.
+  Genetic test pricing is billed to patients/payers per test (often via
+  insurance, with patient-assistance programs), not metered per API call. No
+  public, machine-readable plan or rate card exists to reconcile.
+notes: >-
+  reconciled false: there is no public Natera developer pricing page. EHR
+  integration is scoped with a Natera EHR specialist; Constellation access is a
+  B2B partner-lab agreement; test billing is clinical (insurance/self-pay).
+  Revisit if Natera publishes a developer pricing or partner rate card.
+sources:
+- https://www.natera.com/emr/
+- https://www.natera.com/natera-portal-hub/
+- https://constellation.natera.com
+plans:
+- id: natera-ehr-integration
+  name: EHR Integration (Epic Aura / HL7 / OncoEMR)
+  type: enterprise
+  description: >-
+    Bidirectional order and results integration provisioned per health system.
+    Implemented over the Epic Aura hub or point-to-point HL7 with a dedicated
+    Natera EHR specialist; typical Aura implementation runs 6-10 weeks. No
+    public price is published.
+  entries:
+  - label: EHR Integration Agreement
+    name: ehr_integration
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact Natera (not public)
+    userMultiplied: false
+  elements:
+  - name: Epic Aura Bidirectional Orders and Results
+  - name: Point-to-Point HL7
+  - name: OncoEMR (Flatiron) Integration
+- id: natera-constellation
+  name: Constellation Partner-Lab Platform
+  type: enterprise
+  description: >-
+    B2B access for partner laboratories to Natera's cfDNA bioinformatic
+    algorithms (e.g., Panorama NIPT) to run, monitor, and troubleshoot genetic
+    analysis jobs. Negotiated partnership; no public price.
+  entries:
+  - label: Constellation Partnership
+    name: constellation
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact Natera (not public)
+    userMultiplied: false
+  elements:
+  - name: cfDNA Algorithm Access
+  - name: Genetic Analysis Job Execution
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
