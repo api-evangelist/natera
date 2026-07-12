@@ -117,6 +117,8 @@ apis:
     services for managing orders and results on the go. No public API surface is
     documented for the backend.
 common:
+- type: DomainSecurity
+  url: security/natera-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/natera
 - type: Website
