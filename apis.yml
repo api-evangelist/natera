@@ -117,6 +117,8 @@ apis:
     services for managing orders and results on the go. No public API surface is
     documented for the backend.
 common:
+- type: AgenticAccess
+  url: agentic-access/natera-agentic-access.yml
 - type: DomainSecurity
   url: security/natera-domain-security.yml
 - type: LinkedIn
