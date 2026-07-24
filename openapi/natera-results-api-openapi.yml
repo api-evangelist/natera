@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: Natera EMR Ordering and Integration Orders Results API
+  description: Representational model of Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API. Test ordering and results delivery are provisioned per health system over the Epic Aura hub and point-to-point HL7, with pre-built orders in the Epic Foundation System. This document models that bidirectional order/results workflow as an HTTP interface for cataloging purposes only - the paths, schemas, and base URL below are NOT official, published Natera endpoints and must not be treated as a live API contract. Integration is established with a Natera EHR specialist (see https://www.natera.com/emr/).
+  termsOfService: https://www.natera.com/privacy-notices/
+  contact:
+    name: Natera EHR Integration
+    url: https://www.natera.com/emr/
+  version: '0.1'
+servers:
+- url: https://www.natera.com
+  description: Placeholder host. Natera does not document a public REST base URL; integration endpoints are not publicly published.
+tags:
+- name: Results
+  description: Test results retrieval (modeled on the documented results workflow).
+paths:
+  /emr/results/{orderId}:
+    get:
+      operationId: getResults
+      tags:
+      - Results
+      summary: Retrieve results for an order (representational).
+      description: Models the results leg documented for the Epic Aura hub, where test results flow back into the patient EHR record. Not a published endpoint.
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Result document for the order (representational).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+components:
+  schemas:
+    Result:
+      type: object
+      properties:
+        orderId:
+          type: string
+        test:
+          type: string
+        status:
+          type: string
+          example: final
+        reportUrl:
+          type: string
+          description: Link to the downloadable result report.
