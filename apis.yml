@@ -8,7 +8,19 @@ description: Natera is a clinical genetic testing company spanning women's healt
   (Flatiron) and other EHR connectivity over HL7, the Constellation cloud
   bioinformatics platform for partner labs, and clinician/patient portals plus a
   provider mobile app.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/natera.png
 tags:
 - Genetic Testing
 - Healthcare
@@ -19,25 +31,6 @@ created: '2026-06-20'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: natera:natera-emr-ordering-integration
-  name: Natera EMR Ordering and Results Integration
-  tags:
-  - EHR Integration
-  - Ordering
-  - Results
-  - HL7
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.natera.com/emr/
-  baseURL: ''
-  properties:
-  - url: https://www.natera.com/emr/
-    type: Documentation
-  - url: openapi/natera-openapi.yml
-    type: OpenAPI
-  description: Bidirectional electronic ordering and results delivery via the Epic
-    Aura hub and point-to-point HL7, with pre-built orders for all Natera tests in
-    the Epic Foundation System. Not a public REST API; provisioned per health
-    system with an EHR specialist.
 - aid: natera:natera-epic-aura-hub
   name: Natera Epic Aura Hub Integration
   tags:
@@ -50,10 +43,10 @@ apis:
   properties:
   - url: https://www.natera.com/emr/
     type: Documentation
-  description: Connect once to the Epic Aura (Order and Results Anywhere) hub for
-    secure, HIPAA-compliant bidirectional order and results integration, transmitting
-    order documentation (progress notes, pathology reports, pedigree charts, cancer
-    history) into Natera and results back into the patient EHR.
+  description: >-
+    Connect once to the Epic Aura (Order and Results Anywhere) hub for secure, HIPAA-compliant bidirectional
+    order and results integration, transmitting order documentation (progress notes, pathology reports,
+    pedigree charts, cancer history) into Natera and results back into the patient EHR.
 - aid: natera:natera-oncoemr-integration
   name: Natera OncoEMR (Flatiron) Integration
   tags:
@@ -66,9 +59,9 @@ apis:
   properties:
   - url: https://www.natera.com/oncology/
     type: Documentation
-  description: Natera's oncology testing portfolio integrated into Flatiron Health's
-    cloud-based OncoEMR platform for electronic ordering and results delivery inside
-    the cancer-care clinical workflow.
+  description: >-
+    Natera's oncology testing portfolio integrated into Flatiron Health's cloud-based OncoEMR platform
+    for electronic ordering and results delivery inside the cancer-care clinical workflow.
 - aid: natera:natera-constellation-platform
   name: Natera Constellation Bioinformatics Platform
   tags:
@@ -82,10 +75,10 @@ apis:
   properties:
   - url: https://constellation.natera.com
     type: Documentation
-  description: Cloud-based platform giving partner laboratories programmatic access
-    to Natera's cell-free DNA bioinformatic algorithms (e.g., Panorama NIPT) to run,
-    monitor, and troubleshoot genetic analysis jobs. B2B partner access, not a public
-    developer API.
+  description: >-
+    Cloud-based platform giving partner laboratories programmatic access to Natera's cell-free DNA bioinformatic
+    algorithms (e.g., Panorama NIPT) to run, monitor, and troubleshoot genetic analysis jobs. B2B partner
+    access, not a public developer API.
 - aid: natera:natera-connect-clinician-portal
   name: Natera Connect Clinician Portal
   tags:
@@ -98,9 +91,10 @@ apis:
   properties:
   - url: https://www.natera.com/natera-portal-hub/
     type: Documentation
-  description: Web portal (Women's Health, Oncology, Organ Health, Rare Disease)
-    for clinicians to order kits and supplies, check testing status and results,
-    download and share reports, and schedule genetic counselor conversations.
+  description: >-
+    Web portal (Women's Health, Oncology, Organ Health, Rare Disease) for clinicians to order kits and
+    supplies, check testing status and results, download and share reports, and schedule genetic counselor
+    conversations.
 - aid: natera:natera-provider-mobile-app
   name: Natera Provider Mobile App
   tags:
@@ -113,9 +107,31 @@ apis:
   properties:
   - url: https://apps.apple.com/us/app/natera-provider/id1559183134
     type: Documentation
-  description: Provider-facing mobile application backed by Natera's private internal
-    services for managing orders and results on the go. No public API surface is
-    documented for the backend.
+  description: >-
+    Provider-facing mobile application backed by Natera's private internal services for managing orders
+    and results on the go. No public API surface is documented for the backend.
+- aid: natera:natera-orders-api
+  name: Natera Orders API
+  description: Test order submission (modeled on the documented order workflow).
+  humanURL: https://www.natera.com/emr/
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/natera-orders-api-openapi.yml
+  - type: Documentation
+    url: https://www.natera.com/emr/
+- aid: natera:natera-results-api
+  name: Natera Results API
+  description: Test results retrieval (modeled on the documented results workflow).
+  humanURL: https://www.natera.com/emr/
+  tags:
+  - Results
+  properties:
+  - type: OpenAPI
+    url: openapi/natera-results-api-openapi.yml
+  - type: Documentation
+    url: https://www.natera.com/emr/
 common:
 - type: AgenticAccess
   url: agentic-access/natera-agentic-access.yml
