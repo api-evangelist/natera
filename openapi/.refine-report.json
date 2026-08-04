@@ -1,0 +1,16 @@
+{
+  "provider": "natera",
+  "sources": [
+    "natera-orders-api-openapi.yml",
+    "natera-results-api-openapi.yml"
+  ],
+  "outputs": [
+    "natera-orders-api-openapi.yml",
+    "natera-results-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
