@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "4b551111-6b22-4e2f-b7fc-6716d3745fb6",
+      "name": "Orders",
+      "description": {
+        "content": "Test order submission (modeled on the documented order workflow).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0619dc7-2df0-451c-9f98-b9c9f6eb615d",
+          "name": "Submit a Natera test order (representational).",
+          "request": {
+            "name": "Submit a Natera test order (representational).",
+            "description": {
+              "content": "Models the bidirectional order leg documented for the Epic Aura hub: an order plus related documentation (progress notes, pathology reports, pedigree charts, personal/family cancer history) is transmitted to Natera. Not a published endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "emr",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"<string>\",\n  \"test\": \"<string>\",\n  \"orderingProvider\": \"<string>\",\n  \"documents\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64868714-18ef-4ddc-843d-e207b6938672",
+              "name": "Order accepted for processing (representational).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "emr",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"patientId\": \"<string>\",\n  \"test\": \"<string>\",\n  \"orderingProvider\": \"<string>\",\n  \"documents\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"status\": \"accepted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.natera.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2b39c419-87b0-4f32-ad53-de5cb2b62695",
+    "name": "Natera EMR Ordering and Results Integration Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representational model of Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API. Test ordering and results delivery are provisioned per health system over the Epic Aura hub and point-to-point HL7, with pre-built orders in the Epic Foundation System. This document models that bidirectional order/results workflow as an HTTP interface for cataloging purposes only - the paths, schemas, and base URL below are NOT official, published Natera endpoints and must not be treated as a live API contract. Integration is established with a Natera EHR specialist (see https://www.natera.com/emr/).\n\nContact Support:\n Name: Natera EHR Integration",
+      "type": "text/plain"
+    }
+  }
+}

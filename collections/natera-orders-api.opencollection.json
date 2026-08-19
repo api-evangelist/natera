@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Natera EMR Ordering and Results Integration Orders API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit a Natera test order (representational).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.natera.com/emr/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Models the bidirectional order leg documented for the Epic Aura hub: an order plus related documentation (progress notes, pathology reports, pedigree charts, personal/family cancer history) is transmitted to Natera. Not a published endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

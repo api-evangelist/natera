@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "3a978f48-2f3b-4e6c-8098-cf26984549ca",
+      "name": "Results",
+      "description": {
+        "content": "Test results retrieval (modeled on the documented results workflow).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "517482a5-7d36-428b-9d96-67b594b1e68a",
+          "name": "Retrieve results for an order (representational).",
+          "request": {
+            "name": "Retrieve results for an order (representational).",
+            "description": {
+              "content": "Models the results leg documented for the Epic Aura hub, where test results flow back into the patient EHR record. Not a published endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "emr",
+                "results",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c52f9552-a701-4a43-9c12-810846a93499",
+              "name": "Result document for the order (representational).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "emr",
+                    "results",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"test\": \"string\",\n  \"status\": \"final\",\n  \"reportUrl\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.natera.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "63054ae0-03d5-4837-8de3-2632062d4969",
+    "name": "Natera EMR Ordering and Integration Orders Results API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representational model of Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API. Test ordering and results delivery are provisioned per health system over the Epic Aura hub and point-to-point HL7, with pre-built orders in the Epic Foundation System. This document models that bidirectional order/results workflow as an HTTP interface for cataloging purposes only - the paths, schemas, and base URL below are NOT official, published Natera endpoints and must not be treated as a live API contract. Integration is established with a Natera EHR specialist (see https://www.natera.com/emr/).\n\nContact Support:\n Name: Natera EHR Integration",
+      "type": "text/plain"
+    }
+  }
+}
