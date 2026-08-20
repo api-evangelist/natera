@@ -115,6 +115,8 @@ apis:
   description: Test order submission (modeled on the documented order workflow).
   humanURL: https://www.natera.com/emr/
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
