@@ -149,6 +149,9 @@ apis:
   - type: Documentation
     url: https://www.natera.com/emr/
 common:
+- type: CapabilityMap
+  url: capabilities/natera-capability-edges.yml
+  name: Natera Business Capability Map
 - type: AgenticAccess
   url: agentic-access/natera-agentic-access.yml
 - type: DomainSecurity

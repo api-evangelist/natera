@@ -1,0 +1,29 @@
+slug: natera
+provider: Natera
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Results
+  spec_file: natera-results-api-openapi.yml
+  capability_id: BC-2860.60
+  capability_id_l1: BC-2860
+  capability_name: Diagnostic Results Management
+  confidence: 0.78
+  evidence: GET /emr/results/{orderId}  getResults  Retrieve results for an order (representational)."
+    ... "Test ordering and results delivery are provisioned per health system over the Epic Aura hub and
+    point-to-point HL7
+  reason: The single operation retrieves diagnostic (genetic lab) test results against an order, and the
+    document explicitly models order/results delivery from a clinical testing lab into the EHR. That is
+    diagnostic results distribution, i.e. Diagnostic Results Management under Diagnostic Services. Confidence
+    held below 0.9 because the surface is explicitly a representational, non-official model with one thin
+    operation.
