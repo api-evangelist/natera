@@ -8,6 +8,18 @@ description: Natera is a clinical genetic testing company spanning women's healt
   (Flatiron) and other EHR connectivity over HL7, the Constellation cloud
   bioinformatics platform for partner labs, and clinician/patient portals plus a
   provider mobile app.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
