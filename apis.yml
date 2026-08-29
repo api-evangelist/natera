@@ -1,5 +1,7 @@
 aid: natera
 url: https://raw.githubusercontent.com/api-evangelist/natera/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 name: Natera
 kind: company
 description: Natera is a clinical genetic testing company spanning women's health,
