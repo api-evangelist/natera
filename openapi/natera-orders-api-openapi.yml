@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Natera EMR Ordering and Results Integration Orders API
-  description: Representational model of Natera's documented EMR integration surface. Natera does NOT publish a public developer REST API. Test ordering and results delivery are provisioned per health system over the Epic Aura hub and point-to-point HL7, with pre-built orders in the Epic Foundation System. This document models that bidirectional order/results workflow as an HTTP interface for cataloging purposes only - the paths, schemas, and base URL below are NOT official, published Natera endpoints and must not be treated as a live API contract. Integration is established with a Natera EHR specialist (see https://www.natera.com/emr/).
+  description: Representational model of Natera's documented EMR integration surface.
   termsOfService: https://www.natera.com/privacy-notices/
   contact:
     name: Natera EHR Integration
@@ -19,7 +19,7 @@ paths:
       operationId: submitOrder
       tags:
       - Orders
-      summary: Submit a Natera test order (representational).
+      summary: Submit a Natera test order (representational)
       description: 'Models the bidirectional order leg documented for the Epic Aura hub: an order plus related documentation (progress notes, pathology reports, pedigree charts, personal/family cancer history) is transmitted to Natera. Not a published endpoint.'
       requestBody:
         required: true
@@ -36,14 +36,6 @@ paths:
                 $ref: '#/components/schemas/OrderAck'
 components:
   schemas:
-    OrderAck:
-      type: object
-      properties:
-        orderId:
-          type: string
-        status:
-          type: string
-          example: accepted
     Order:
       type: object
       properties:
@@ -60,3 +52,11 @@ components:
           description: Order-related documentation transmitted to Natera.
           items:
             type: string
+    OrderAck:
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+          example: accepted
