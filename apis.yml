@@ -109,25 +109,6 @@ apis:
     Web portal (Women's Health, Oncology, Organ Health, Rare Disease) for clinicians to order kits and
     supplies, check testing status and results, download and share reports, and schedule genetic counselor
     conversations.
-- aid: natera:natera-provider-mobile-app
-  name: Natera Provider Mobile App
-  tags:
-  - Mobile
-  - Providers
-  - iOS
-  tags_raw:
-  - Mobile
-  - Provider
-  - iOS
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://apps.apple.com/us/app/natera-provider/id1559183134
-  baseURL: ''
-  properties:
-  - url: https://apps.apple.com/us/app/natera-provider/id1559183134
-    type: Documentation
-  description: >-
-    Provider-facing mobile application backed by Natera's private internal services for managing orders
-    and results on the go. No public API surface is documented for the backend.
 - aid: natera:natera-orders-api
   name: Natera Orders API
   description: Test order submission (modeled on the documented order workflow).
