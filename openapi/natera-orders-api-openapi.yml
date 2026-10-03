@@ -36,6 +36,14 @@ paths:
                 $ref: '#/components/schemas/OrderAck'
 components:
   schemas:
+    OrderAck:
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+          example: accepted
     Order:
       type: object
       properties:
@@ -52,11 +60,3 @@ components:
           description: Order-related documentation transmitted to Natera.
           items:
             type: string
-    OrderAck:
-      type: object
-      properties:
-        orderId:
-          type: string
-        status:
-          type: string
-          example: accepted
