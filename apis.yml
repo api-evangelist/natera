@@ -42,7 +42,7 @@ tags:
 - EHR Integration
 - HL7
 created: '2026-06-20'
-modified: '2026-06-20'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: natera:natera-epic-aura-hub
@@ -134,6 +134,8 @@ apis:
   - type: Documentation
     url: https://www.natera.com/emr/
 common:
+- url: https://www.natera.com/company/news/
+  type: Blog
 - type: CapabilityMap
   url: capabilities/natera-capability-edges.yml
   name: Natera Business Capability Map
