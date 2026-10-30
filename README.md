@@ -1,4 +1,4 @@
-# Natera (natera)
+# Natera
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,134 +66,120 @@
 
 Natera is a clinical genetic testing company spanning women's health, oncology, and organ health. Rather than a public developer REST API, Natera exposes integration surfaces - Epic Aura bidirectional order/results, OncoEMR (Flatiron) and other EHR connectivity over HL7, the Constellation cloud bioinformatics platform for partner labs, and clinician/patient portals plus a provider mobile app.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/natera/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/natera/refs/heads/main/apis.yml)
+**Areas:** Genetic Testing · Healthcare · Diagnostics · EHR Integration · HL7
 
-## Tags
+## Natera on APIs.io
 
-- Genetic Testing
-- Healthcare
-- Diagnostics
-- EHR Integration
-- HL7
+Everything profiled for Natera is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/natera/](https://apis.io/providers/natera/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (6)
 
-- **Created:** 2026-06-20
-- **Modified:** 2026-06-20
+- [Natera Epic Aura Hub Integration](https://apis.io/apis/natera/natera-epic-aura-hub/) — Connect once to the Epic Aura (Order and Results Anywhere) hub for secure, HIPAA-compliant bidirectional order and results integration, transmitting order…
+- [Natera OncoEMR (Flatiron) Integration](https://apis.io/apis/natera/natera-oncoemr-integration/) — Natera's oncology testing portfolio integrated into Flatiron Health's cloud-based OncoEMR platform for electronic ordering and results delivery inside the…
+- [Natera Constellation Bioinformatics Platform](https://apis.io/apis/natera/natera-constellation-platform/) — Cloud-based platform giving partner laboratories programmatic access to Natera's cell-free DNA bioinformatic algorithms (e.g., Panorama NIPT) to run,…
+- [Natera Connect Clinician Portal](https://apis.io/apis/natera/natera-connect-clinician-portal/) — Web portal (Women's Health, Oncology, Organ Health, Rare Disease) for clinicians to order kits and supplies, check testing status and results, download and…
+- [Natera Orders API](https://apis.io/apis/natera/natera-orders-api/) — Test order submission (modeled on the documented order workflow).
+- [Natera Results API](https://apis.io/apis/natera/natera-results-api/) — Test results retrieval (modeled on the documented results workflow).
 
-## APIs
+### Published properties
 
-### Natera EMR Ordering and Results Integration
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Bidirectional electronic ordering and results delivery via the Epic Aura hub and point-to-point HL7, with pre-built orders for all Natera tests in the Epic Foundation System. Not a public REST API; provisioned per health system with an EHR specialist.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.natera.com/emr/](https://www.natera.com/emr/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Natera Agentic Access](https://apis.io/agentic-access/natera/natera-agentic-access/)
 
-- EHR Integration
-- Ordering
-- Results
-- HL7
+#### Collections (3)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://www.natera.com/emr/)
-- [OpenAPI](openapi/natera-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/natera.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/natera.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Natera](https://apis.io/collections/natera/open-natera/)
+- [Natera EMR Ordering and Results Integration Orders API](https://apis.io/collections/natera/open-natera-orders-api/)
+- [Natera EMR Ordering and Integration Orders Results API](https://apis.io/collections/natera/open-natera-results-api/)
 
-### Natera Epic Aura Hub Integration
+#### Security (1)
 
-Connect once to the Epic Aura (Order and Results Anywhere) hub for secure, HIPAA-compliant bidirectional order and results integration, transmitting order documentation (progress notes, pathology reports, pedigree charts, cancer history) into Natera and results back into the patient EHR.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://www.natera.com/emr/](https://www.natera.com/emr/)
+- [Natera Domain Security](https://apis.io/security/natera/natera-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Epic
-- Aura
-- Bidirectional
+Published plans, tiers and prices.
 
-#### Properties
+- [Natera Plans Pricing](https://apis.io/plans/natera/natera-plans-pricing/)
 
-- [Documentation](https://www.natera.com/emr/)
+#### Rate limits (1)
 
-### Natera OncoEMR (Flatiron) Integration
+Published request limits.
 
-Natera's oncology testing portfolio integrated into Flatiron Health's cloud-based OncoEMR platform for electronic ordering and results delivery inside the cancer-care clinical workflow.
+- [Natera Rate Limits](https://apis.io/rate-limits/natera/natera-rate-limits/)
 
-- **Human URL:** [https://www.natera.com/oncology/](https://www.natera.com/oncology/)
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Oncology
-- OncoEMR
-- Flatiron
+- [Natera Finops](https://apis.io/finops/natera/natera-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://www.natera.com/oncology/)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Natera Constellation Bioinformatics Platform
-
-Cloud-based platform giving partner laboratories programmatic access to Natera's cell-free DNA bioinformatic algorithms (e.g., Panorama NIPT) to run, monitor, and troubleshoot genetic analysis jobs. B2B partner access, not a public developer API.
-
-- **Human URL:** [https://constellation.natera.com](https://constellation.natera.com)
-
-#### Tags
-
-- Bioinformatics
-- cfDNA
-- Partner Labs
-- NIPT
-
-#### Properties
-
-- [Documentation](https://constellation.natera.com)
-
-### Natera Connect Clinician Portal
-
-Web portal (Women's Health, Oncology, Organ Health, Rare Disease) for clinicians to order kits and supplies, check testing status and results, download and share reports, and schedule genetic counselor conversations.
-
-- **Human URL:** [https://connect.natera.com/users/log_in](https://connect.natera.com/users/log_in)
-
-#### Tags
-
-- Portal
-- Clinician
-- Ordering
-
-#### Properties
-
-- [Documentation](https://www.natera.com/natera-portal-hub/)
-
-### Natera Provider Mobile App
-
-Provider-facing mobile application backed by Natera's private internal services for managing orders and results on the go. No public API surface is documented for the backend.
-
-- **Human URL:** [https://apps.apple.com/us/app/natera-provider/id1559183134](https://apps.apple.com/us/app/natera-provider/id1559183134)
-
-#### Tags
-
-- Mobile
-- Provider
-- iOS
-
-#### Properties
-
-- [Documentation](https://apps.apple.com/us/app/natera-provider/id1559183134)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/natera)
 - [Website](https://www.natera.com)
 - [Documentation](https://www.natera.com/emr/)
-- [Plans](plans/natera-plans-pricing.yml)
-- [Rate Limits](rate-limits/natera-rate-limits.yml)
-- [Fin Ops](finops/natera-finops.yml)
+- [Blog](https://www.natera.com/company/news/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 18.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 43.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 5.3 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/natera/](https://apis.io/providers/natera/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Natera: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/natera/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
